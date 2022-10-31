@@ -20,9 +20,7 @@ const geocode = (city, callback) => {
     const access_key = '0b3b99e128fb0540979d1967c55de1e4'
     const units = 'f'   
     const url = 'http://api.weatherstack.com/current?access_key='+access_key+'&query='+city+'&units='+units
-    console.log(url)
     request({ url : url, json : true}, (error, { body }) => {
-        console.log('body:::: ' + JSON.stringify(body))
         if (error) {
             callback('Unable to connect to location services!', undefined)
         } else if (body.success === false) {
